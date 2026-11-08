@@ -1,9 +1,12 @@
+
+
 package com.localdriveai.app
 
 import android.os.Bundle
 import androidx.media.MediaBrowserServiceCompat
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaDescriptionCompat
+import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
 
@@ -25,9 +28,9 @@ class DriveMediaService : MediaBrowserServiceCompat() {
         )
 
         mediaSession.setMetadata(
-            android.support.v4.media.MediaMetadataCompat.Builder()
+            MediaMetadataCompat.Builder()
                 .putString(
-                    android.support.v4.media.MediaMetadataCompat.METADATA_KEY_TITLE,
+                    MediaMetadataCompat.METADATA_KEY_TITLE,
                     "Local Drive AI"
                 )
                 .build()
@@ -92,4 +95,4 @@ class DriveMediaService : MediaBrowserServiceCompat() {
 
         super.onDestroy()
     }
-}.
+}
